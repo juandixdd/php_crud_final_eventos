@@ -1,0 +1,26 @@
+:root{
+    --color-primary: #75AFFF;
+    --color-secundary: #345480;
+    --color-light: #F5F5F5;
+}
+
+a{
+    text-decoration: none;
+    color: var(--color-light);
+}
+
+a:hover{
+    color: var(--color-light);
+}
+
+.container-header{
+    background-color: var(--color-primary);
+}
+
+.logo-header{
+    width: 100px;
+    height: auto;
+}
+
+
+
