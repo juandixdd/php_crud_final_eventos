@@ -15,6 +15,11 @@ a:hover{
 
 .container-header{
     background-color: var(--color-primary);
+    border-bottom: solid 3px var(--color-secundary);
+}
+
+.container-footer{
+    border-top: solid 3px var(--color-primary);
 }
 
 .logo-header{

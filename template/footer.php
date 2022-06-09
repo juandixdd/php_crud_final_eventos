@@ -1,4 +1,4 @@
-<footer class="container-fluid bg-dark fixed-bottom p-3">
+<footer class="container-fluid bg-dark fixed-bottom p-3 container-footer">
     <div class="row">
         <div class="col-md text-light text-end">
             <h5>&copy; JuanDiEvent 2022</h5>
