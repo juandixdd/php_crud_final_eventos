@@ -13,16 +13,15 @@
 <body>
     <!-- ? headder  -->
     <div class="container-fluid container-header">
-        <div class="row">
-            <div class="col-md">
-                <header class="p-3">
-                    <a href="#">
-                        <div class="row align-items-center">
-                            <img src="assets/img/logo.png" alt="Logo" class="logo-header" class="col">
-                            <h3 class="col">JuandiEvents</h3>
-                        </div>
-                    </a>
-                </header>
+        <header class="p-3">
+            <div class="row align-items-center justify-content-between">
+                <div class="col-md-3">
+                    <div class="row align-items-center">
+                        <img src="assets/img/logo.png" alt="Logo" class="logo-header" class="col">
+                        <h3 class="col">JuandiEvents</h3>
+                    </div>
+                </div>
             </div>
-        </div>
+        </header>
+
     </div>

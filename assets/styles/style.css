@@ -1,31 +1,41 @@
-:root{
-    --color-primary: #75AFFF;
-    --color-secundary: #345480;
-    --color-light: #F5F5F5;
+:root {
+  --color-primary: #75afff;
+  --color-secundary: #345480;
+  --color-light: #f5f5f5;
+    --color-dark: #1f1f1f;
 }
 
-a{
-    text-decoration: none;
-    color: var(--color-light);
+a {
+  text-decoration: none;
+  color: var(--color-light);
 }
 
-a:hover{
-    color: var(--color-light);
+a:hover {
+  color: var(--color-light);
 }
 
-.container-header{
+.container-header {
+  background-color: var(--color-primary);
+  border-bottom: solid 3px var(--color-secundary);
+}
+
+.container-footer {
+  border-top: solid 3px var(--color-primary);
+}
+
+.logo-header {
+  width: 100px;
+  height: auto;
+}
+
+.btn-custom-primary{
     background-color: var(--color-primary);
-    border-bottom: solid 3px var(--color-secundary);
+    color: var(--color-dark);
 }
 
-.container-footer{
-    border-top: solid 3px var(--color-primary);
+.btn-custom-primary:hover{
+    background-color: var(--color-secundary);
+    color: var(--color-light);
 }
-
-.logo-header{
-    width: 100px;
-    height: auto;
-}
-
 
 
