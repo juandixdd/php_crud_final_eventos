@@ -21,6 +21,25 @@
                         <h3 class="col">JuandiEvents</h3>
                     </div>
                 </div>
+                <div class="col-md-3">
+
+                </div>
+                <div class="col-md-3">
+                    <div class="row justify-content-between">
+                        <div class="col">
+                            <a href="principalPage.php" class="btn btn-outline-dark">Eventos</a>
+                        </div>
+                        <div class="dropdown col">
+                            <button class="btn btn-dark dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                                Juan Diego Arteaga
+                            </button>
+                            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                                <li><a class="dropdown-item" href="profile.php">Perfil</a></li>
+                                <li><a class="dropdown-item text-danger" href="index.php">Cerrar sesión</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
             </div>
         </header>
 
