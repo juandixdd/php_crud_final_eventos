@@ -17,8 +17,8 @@
             <div class="row align-items-center justify-content-between">
                 <div class="col-md-3">
                     <div class="row align-items-center">
-                        <img src="assets/img/logo.png" alt="Logo" class="logo-header" class="col">
-                        <h3 class="col">JuandiEvents</h3>
+                        <a href="#" class="col-auto"><img src="assets/img/logo.png" alt="Logo" class="logo-header "></a>
+                        <a href="#" class="col-auto"><h3>JuandiEvents</h3></a>
                     </div>
                 </div>
                 <div class="col-md-3">
