@@ -11,6 +11,9 @@
                     <hr>
                     <h5><b>Edad: </b>22</h5>
                     <h5><b>Email: </b> email@email.com </h5>
+                    <div class="row justify-content-end">
+                        <button class="btn btn-custom-primary mt-4 col-md-3">Editar datos de usuario</button>
+                    </div>
                 </div>
             </div>
         </div>
