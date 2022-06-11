@@ -1,6 +1,6 @@
 :root {
   --color-primary: #0e0e0e;
-  --color-secundary: #58A0A4;
+  --color-secundary: #58a0a4;
   --color-light: #f5f5f5;
   --color-dark: #0e0e0e;
 }
@@ -20,12 +20,12 @@ a:hover {
   color: var(--color-dark);
 }
 
-.header-tittle{
+.header-tittle {
   color: var(--color-light);
-  font-family: 'Courgette', cursive;
+  font-family: "Courgette", cursive;
 }
 
-.header-tittle:hover{
+.header-tittle:hover {
   color: var(--color-light);
 }
 
@@ -59,4 +59,36 @@ a:hover {
   color: var(--color-light);
   opacity: 0.8;
   transition: 0.5s;
+}
+
+/* ? Animación de rebote */
+
+.scale-up-center {
+  animation: scale-up-center 0.4s;
+}
+@keyframes scale-up-center {
+  0% {
+    transform: scale(0.5);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* ? Animación del titulo */
+
+.tracking-in-expand {
+  animation: tracking-in-expand 0.4s linear both;
+}
+@keyframes tracking-in-expand {
+  0% {
+    letter-spacing: -0.2em;
+    opacity: 0;
+  }
+  40% {
+    opacity: 0.6;
+  }
+  100% {
+    opacity: 1;
+  }
 }

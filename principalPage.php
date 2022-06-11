@@ -1,6 +1,6 @@
 <?php include 'template/header.php'; ?>
 
-<div class="container mt-5" style="margin-bottom: 100px;">
+<div class="container mt-5 scale-up-center" style="margin-bottom: 100px;">
     <div class="row">
         <div class="card">
             <div class="card-body">

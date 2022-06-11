@@ -23,7 +23,7 @@
                     <div class="row align-items-center">
                         <a href="#" class="col-auto"><img src="assets/img/logo.png" alt="Logo" class="logo-header "></a>
                         <a href="#" class="col-auto header-tittle">
-                            <h3>JuandiEvents</h3>
+                            <h3 class="tracking-in-expand">JuandiEvents</h3>
                         </a>
                     </div>
                 </div>

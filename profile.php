@@ -2,7 +2,7 @@
 
 <!-- ? profile -->
 
-<div class="container" style="margin-bottom: 100px;">
+<div class="container scale-up-center" style="margin-bottom: 100px;">
     <div class="row justify-content-center m-5">
         <div class="col-md-10 mt-5">
             <div class="card">
