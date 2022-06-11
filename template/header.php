@@ -32,7 +32,7 @@
                             <a href="principalPage.php" class="btn btn-outline-light width-auto">Eventos</a>
                         </div>
                         <div class="dropdown col-auto p-1">
-                            <button class="btn btn-custom-secundary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                            <button class="btn btn-outline-light dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
                                 Juan Diego Arteaga
                             </button>
                             <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">

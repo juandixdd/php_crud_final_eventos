@@ -30,7 +30,7 @@ a:hover {
 }
 
 .container-footer {
-  border-top: solid 3px var(--color-primary);
+  border-top: solid 3px var(--color-secundary);
 }
 
 .logo-header {
