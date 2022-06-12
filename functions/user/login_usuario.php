@@ -1,24 +1,22 @@
 <?php
-include "../../model/conexion.php";
 
-$userQuery = $bd->prepare("SELECT * FROM users where email = ? AND password = ?");
-$result = $userQuery->execute([$_POST['email'], $_POST['password']]);
-$user = $userQuery->fetchAll(PDO::FETCH_OBJ);
+$email = $_POST['email'];
+$password = $_POST['password'];
 
-if ($result === true) {
-    if (count($user) > 0) {
-        echo "
-        <script>
-            localStorage.setItem('user_id', '" . $user[0]->id . "');
-        </script>";
+session_start();
+$_SESSION['email'] = $email;
 
-        $loginQuery = $bd->prepare("UPDATE users SET isLogged = true WHERE id = ?");
-        $loginResult = $loginQuery->execute([$user[0]->id]);
+$conexion = mysqli_connect("localhost", "root", "", "events");
 
+$query = "SELECT * FROM users WHERE email = '$email' AND password = '$password'";
+$result = mysqli_query($conexion, $query);
 
+$rows = mysqli_num_rows($result);
 
-        header("Location: ../../principalPage.php?message=successLogin");
-    } else {
-        header("Location: ../../index.php?message=errorLogin");
-    }
+if ($rows > 0) {
+    header("Location: ../../principalPage.php?message=successLogin");
+} else {
+    header("Location: ../../index.php?message=errorLogin");
 }
+
+mysqli_close($conexion);
