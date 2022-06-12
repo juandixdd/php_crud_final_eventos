@@ -2,6 +2,8 @@
 
 print_r($_POST);
 
+/* ? Validaciones */
+
 if (
     empty($_POST["oculto"]) ||
     empty($_POST["names"]) ||
@@ -19,3 +21,5 @@ if (
 ) {
     header("Location: ../../register.php?error=2");
 }
+
+

@@ -3,8 +3,10 @@
 <div class="container scale-up-center" style="margin-bottom: 100px;">
     <div class="row justify-content-center m-5">
         <div class="col-md-6 mt-5">
-            <!-- ? Error alerts -->
 
+
+
+            <!-- ? Error alerts -->
             <?php if (isset($_GET['error']) && $_GET['error'] == '1') { ?>
                 <div class="alert alert-danger alert-dismissible fade show" role="alert">
                     Debes ingresar todos los datos
@@ -18,8 +20,9 @@
                     <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                 </div>
             <?php } ?>
-
             <!-- ? /Error alerts -->
+
+
             <div class="card">
                 <div class="card-body">
                     <h5 class="card-title">Registrarse</h5>
@@ -27,32 +30,32 @@
 
                         <div class="form-group mb-3">
                             <label for="names">Nombres</label>
-                            <input type="text" class="form-control" id="names" placeholder="Ingresar nombres" name="names">
+                            <input required type="text" class="form-control" id="names" placeholder="Ingresar nombres" name="names">
                         </div>
 
                         <div class="form-group mb-3">
                             <label for="last_names">Apellidos</label>
-                            <input type="text" class="form-control" id="last_names" placeholder="Ingresar apellidos" name="last_names">
+                            <input required type="text" class="form-control" id="last_names" placeholder="Ingresar apellidos" name="last_names">
                         </div>
 
                         <div class="form-group mb-3">
                             <label for="age">Edad</label>
-                            <input type="number" class="form-control" id="age" placeholder="Ingresar edad" name="age">
+                            <input required type="number" class="form-control" id="age" placeholder="Ingresar edad" name="age">
                         </div>
 
                         <div class="form-group mb-3">
                             <label for="email">Email</label>
-                            <input type="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="Ingresar email" name="email">
+                            <input required type="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="Ingresar email" name="email">
                         </div>
 
                         <div class="form-group mb-3">
                             <label for="password">Contraseña</label>
-                            <input type="password" class="form-control" id="password" placeholder="Contraseña" name="password">
+                            <input required type="password" class="form-control" id="password" placeholder="Contraseña" name="password">
                         </div>
 
                         <div class="form-group mb-3">
                             <label for="password_confirm">Confirmar contraseña</label>
-                            <input type="password" class="form-control" id="password_confirm" placeholder="Confirmar contraseña" name="password_confirm">
+                            <input required type="password" class="form-control" id="password_confirm" placeholder="Confirmar contraseña" name="password_confirm">
                         </div>
 
                         <div class="row">
