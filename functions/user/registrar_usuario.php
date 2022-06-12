@@ -23,18 +23,32 @@ if (
 }
 
 include "../../model/conexion.php";
-$names = $_POST["names"];
-$last_names = $_POST["last_names"];
-$age = $_POST["age"];
-$email = $_POST["email"];
-$password = $_POST["password"];
+/* Email validator */
+$emailExist = $bd->prepare("SELECT * FROM users WHERE email = ?");
+$emailResult = $emailExist->execute([$_POST["email"]]);
+$email = $emailExist->fetchAll(PDO::FETCH_OBJ);
 
-$query = $bd->prepare("INSERT INTO users (names, last_names, age, email, password) VALUES (?, ?, ?, ?, ?);");
-$result = $query->execute([$names, $last_names, $age, $email, $password]);
+if ($emailResult === true) {
+    if (count($email) > 0) {
+        /* Email error */
+        header("Location: ../../register.php?message=error3");
+        exit;
+    } else {
+        /* Register */
+        $names = $_POST["names"];
+        $last_names = $_POST["last_names"];
+        $age = $_POST["age"];
+        $email = $_POST["email"];
+        $password = $_POST["password"];
 
-if ($result === true) {
-    header("Location: ../../index.php?message=success");
-} else {
-    header("Location: ../../register.php?message=errorRegistro");
-    exit;
+        $query = $bd->prepare("INSERT INTO users (names, last_names, age, email, password) VALUES (?, ?, ?, ?, ?);");
+        $result = $query->execute([$names, $last_names, $age, $email, $password]);
+
+        if ($result === true) {
+            header("Location: ../../index.php?message=success");
+        } else {
+            header("Location: ../../register.php?message=errorRegistro");
+            exit;
+        }
+    }
 }

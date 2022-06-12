@@ -21,6 +21,13 @@
                 </div>
             <?php } ?>
 
+            <?php if (isset($_GET['message']) && $_GET['message'] == 'error3') { ?>
+                <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                    Opps! El email ya se encuentra registrado
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+            <?php } ?>
+
             <?php if (isset($_GET['message']) && $_GET['message'] == 'errorRegistro') { ?>
                 <div class="alert alert-danger alert-dismissible fade show" role="alert">
                     Opps! Hubo un error en el registro, intentalo de nuevo
