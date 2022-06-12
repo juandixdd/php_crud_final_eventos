@@ -6,21 +6,28 @@
 
 
 
-            <!-- ? Error alerts -->
-            <?php if (isset($_GET['error']) && $_GET['error'] == '1') { ?>
+            <!-- ? Alerts -->
+            <?php if (isset($_GET['message']) && $_GET['message'] == 'error1') { ?>
                 <div class="alert alert-danger alert-dismissible fade show" role="alert">
                     Debes ingresar todos los datos
                     <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                 </div>
             <?php } ?>
 
-            <?php if (isset($_GET['error']) && $_GET['error'] == '2') { ?>
+            <?php if (isset($_GET['message']) && $_GET['message'] == 'error2') { ?>
                 <div class="alert alert-danger alert-dismissible fade show" role="alert">
                     Opps! Las contraseñas no coinciden
                     <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                 </div>
             <?php } ?>
-            <!-- ? /Error alerts -->
+
+            <?php if (isset($_GET['message']) && $_GET['message'] == 'errorRegistro') { ?>
+                <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                    Opps! Hubo un error en el registro, intentalo de nuevo
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+            <?php } ?>
+            <!-- ? /Alerts -->
 
 
             <div class="card">

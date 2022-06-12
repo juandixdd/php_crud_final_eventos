@@ -3,6 +3,16 @@
 <div class="container scale-up-center" style="margin-bottom: 100px;">
     <div class="row justify-content-center m-5">
         <div class="col-md-6 mt-5">
+
+            <!-- ? Alerts -->
+            <?php if (isset($_GET['message']) && $_GET['message'] == 'success') { ?>
+                <div class="alert alert-success alert-dismissible fade show" role="alert">
+                    Gracias por registrate!, ahora puedes iniciar sesión
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+            <?php } ?>
+            <!-- /Alerts -->
+
             <div class="card">
                 <div class="card-body">
                     <h5 class="card-title">Iniciar sesión</h5>
