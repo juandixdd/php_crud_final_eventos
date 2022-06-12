@@ -6,10 +6,17 @@
 
             <!-- ? Alerts -->
             <?php if (isset($_GET['message']) && $_GET['message'] == 'success') { ?>
-                <div class="alert alert-success alert-dismissible fade show" role="alert">
-                    Gracias por registrate!, ahora puedes iniciar sesión
-                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                </div>
+
+                <script>
+                    window.onload = function alertSuccess() {
+                        swal({
+                            title: "Registro exitoso",
+                            text: "Ahora puedes iniciar sesión",
+                            icon: "success",
+                            button: "Ok",
+                        });
+                    }
+                </script>
             <?php } ?>
             <!-- /Alerts -->
 
