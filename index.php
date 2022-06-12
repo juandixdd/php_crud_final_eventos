@@ -48,7 +48,7 @@
 
                         <!-- No tienes cuenta? -->
                         <div class="row">
-                            <a class="text-primary text-center mt-2">¿No tienes cuenta? Regístrate</a>
+                            <a href="register.php" class="text-primary text-center mt-2">¿No tienes cuenta? Regístrate</a>
                         </div>
 
 

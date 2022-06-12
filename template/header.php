@@ -30,21 +30,23 @@
 
                 <?php
                 session_start();
-                if (isset($_SESSION['email'])) {
-                    
+        
+
+                if (isset($_SESSION['email']) &&  $_GET['message'] != 'errorLogin') {
+                   
                 ?>
 
                     <div class="col-md-3 p-2">
                         <div class="row justify-content-center">
                             <div class="col-auto p-1">
-                                <a href="principalPage.php" class="btn btn-outline-light width-auto">Eventos</a>
+                                <a href="principalPage.php?message=null" class="btn btn-outline-light width-auto">Eventos</a>
                             </div>
                             <div class="dropdown col-auto p-1">
                                 <button class="btn btn-outline-light dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
                                     <?php echo $_SESSION['email']; ?>
                                 </button>
                                 <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                                    <li><a class="dropdown-item" href="profile.php">Perfil</a></li>
+                                    <li><a class="dropdown-item" href="profile.php?message=null">Perfil</a></li>
                                     <li><a class="dropdown-item text-danger" href="functions\user\logout.php">Cerrar sesión</a></li>
                                 </ul>
                             </div>

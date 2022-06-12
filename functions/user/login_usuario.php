@@ -6,6 +6,8 @@ $password = $_POST['password'];
 session_start();
 $_SESSION['email'] = $email;
 
+
+
 $conexion = mysqli_connect("localhost", "root", "", "events");
 
 $query = "SELECT * FROM users WHERE email = '$email' AND password = '$password'";
