@@ -2,6 +2,25 @@
 
 <div class="container mt-5 scale-up-center" style="margin-bottom: 100px;">
     <div class="row">
+
+        <!-- ? Alerts -->
+        <?php if (isset($_GET['message']) && $_GET['message'] == 'successLogin') { ?>
+            <script>
+                    window.onload = function alertSuccess() {
+                        swal({
+                            title: "Inicio de sesión exitoso",
+                            text: "Ahora puedes acceder a tu cuenta",
+                            icon: "success",
+                            position: "top-end",
+                            showConfirmButton: false,
+                            timer: 1000
+                        });
+                    }
+                </script>
+        <?php } ?>
+
+        <!-- ? Alerts -->
+
         <div class="card">
             <div class="card-body">
                 <h5 class="card-title">Eventos</h5>
@@ -45,8 +64,8 @@
                                 <a href="" class="btn btn-custom-primary">Registrarme</a>
                             </td>
                         </tr>
-                       
-                        
+
+
                     </tbody>
                 </table>
 

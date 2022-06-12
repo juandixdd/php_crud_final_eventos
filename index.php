@@ -18,29 +18,37 @@
                     }
                 </script>
             <?php } ?>
+
+            <?php if (isset($_GET['message']) && $_GET['message'] == 'errorLogin') { ?>
+                <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                    El usuario o contraseña son incorrectos.
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+            <?php } ?>
+
             <!-- /Alerts -->
 
             <div class="card">
                 <div class="card-body">
                     <h5 class="card-title">Iniciar sesión</h5>
-                    <form action="principalPage.php">
+                    <form action="functions/user/login_usuario.php" method="POST">
                         <div class="form-group mb-3">
                             <label for="email">Email</label>
-                            <input type="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="Ingresar email">
-
+                            <input required type="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="Ingresar email" name="email">
                         </div>
                         <div class="form-group mb-3">
                             <label for="password">Contraseña</label>
-                            <input type="password" class="form-control" id="password" placeholder="Contraseña">
+                            <input required type="password" class="form-control" id="password" placeholder="Contraseña" name="password">
                         </div>
 
                         <div class="row">
-                            <button type="submit" class="btn btn-custom-primary">Iniciar Sesión</button>
+                            <input type="hidden" name="oculto" value="1">
+                            <input type="submit" class="btn btn-custom-primary" value="Iniciar sesión">
                         </div>
 
                         <!-- No tienes cuenta? -->
                         <div class="row">
-                            <a href="register.php" class="text-primary text-center mt-2">¿No tienes cuenta? Regístrate</a>
+                            <a class="text-primary text-center mt-2">¿No tienes cuenta? Regístrate</a>
                         </div>
 
 

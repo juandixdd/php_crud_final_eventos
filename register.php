@@ -91,3 +91,8 @@
 </div>
 
 <?php include 'template/footer.php'; ?>
+
+<!--     include_once "model/conexion.php";
+    $sentencia = $bd->query("SELECT * FROM users where email = .'".$_POST['email']."'");
+    $users = $sentencia->fetchAll(PDO::FETCH_OBJ);
+    print_r($users); -->
