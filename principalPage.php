@@ -74,4 +74,9 @@
     </div>
 </div>
 
+<?php
+    echo $_SESSION['email'];
+    print_r($_SESSION['user']);
+?>
+
 <?php include 'template/footer.php'; ?>
