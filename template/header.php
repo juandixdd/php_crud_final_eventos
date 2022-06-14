@@ -43,7 +43,7 @@
                             </div>
                             <div class="dropdown col-auto p-1">
                                 <button class="btn btn-outline-light dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-                                    <?php echo $_SESSION['email']; ?>
+                                    <?php echo "Bienvenido " . $_SESSION['user']['names']; ?>
                                 </button>
                                 <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
                                     <li><a class="dropdown-item" href="profile.php?message=null">Perfil</a></li>
