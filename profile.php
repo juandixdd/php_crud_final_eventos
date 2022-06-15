@@ -41,7 +41,9 @@ $events = $query->fetchAll(PDO::FETCH_OBJ);
                     <hr>
                     <h5><b>Edad:</b> <?php echo $_SESSION['user']['age']?></h5>
                     <h5><b>Email:</b> <?php echo $_SESSION['user']['email']?> </h5>
-                    
+                    <?php if (isset($_SESSION['user']) && ($_SESSION['user']['role'] == 'admin')) { ?>
+                        <h5><b>Rol:</b> <?php echo $_SESSION['user']['role']?> </h5>
+                    <?php } ?>
                 </div>
 
 

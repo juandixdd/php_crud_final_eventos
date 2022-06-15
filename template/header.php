@@ -30,14 +30,24 @@
 
                 <?php
                 session_start();
-        
+
 
                 if (isset($_SESSION['email']) &&  $_GET['message'] != 'errorLogin') {
-                   
+
                 ?>
 
-                    <div class="col-md-3 p-2">
+                    <div class="col-md-5 p-2">
                         <div class="row justify-content-center">
+
+                            <?php if (isset($_SESSION['user']) && ($_SESSION['user']['role'] == 'admin')) { ?>
+                                <div class="col-auto p-1">
+                                    <a href="usuariosSuscritos.php?message=null" class="btn btn-outline-light width-auto">Ver usuarios suscritos</a>
+                                </div>
+                            <?php } ?>
+
+
+
+
                             <div class="col-auto p-1">
                                 <a href="principalPage.php?message=null" class="btn btn-outline-light width-auto">Eventos</a>
                             </div>
