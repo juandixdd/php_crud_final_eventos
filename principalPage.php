@@ -5,6 +5,7 @@
 include_once 'model/conexion.php';
 $query = $bd->query("SELECT * FROM events");
 $events = $query->fetchAll(PDO::FETCH_OBJ);
+
 ?>
 
 <div class="container mt-5 scale-up-center" style="margin-bottom: 100px;">
@@ -37,10 +38,6 @@ $events = $query->fetchAll(PDO::FETCH_OBJ);
                         <tr>
                             <th scope="col">#</th>
                             <th scope="col">Nombre</th>
-                            <th scope="col">Fecha</th>
-                            <th scope="col">Día</th>
-                            <th scope="col">Hora</th>
-                            <th scope="col">Semana</th>
                             <th scope="col">Mes</th>
                             <th scope="col">Acciones</th>
                         </tr>
@@ -54,13 +51,9 @@ $events = $query->fetchAll(PDO::FETCH_OBJ);
                             <tr>
                                 <th scope="row"><?php echo $event->id ?></th>
                                 <td><?php echo $event->name ?></td>
-                                <td><?php echo $event->date ?></td>
-                                <td><?php echo $event->day ?></td>
-                                <td><?php echo $event->hour ?></td>
-                                <td>Semana 1</td>
                                 <td><?php echo $event->month ?></td>
                                 <td>
-                                    <a href="" class="btn btn-custom-primary">Registrarme</a>
+                                    <a class="btn btn-custom-primary" href="functions/event/registrar_evento.php?eventId=<?php echo $event->id ?>">Registrarme</a>
                                 </td>
                             </tr>
 
@@ -75,5 +68,6 @@ $events = $query->fetchAll(PDO::FETCH_OBJ);
         </div>
     </div>
 </div>
+
 
 <?php include 'template/footer.php'; ?>
