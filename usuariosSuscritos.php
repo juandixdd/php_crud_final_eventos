@@ -26,7 +26,9 @@ $events = $query->fetchAll(PDO::FETCH_OBJ);
                     <div class="row justify-content-between">
                         <h5 class="card-title col-md-4">Eventos</h5>
                         <?php if (isset($_SESSION['user']) && ($_SESSION['user']['role'] == 'admin')) { ?>
-                            <a href="functions/events/nuevoEvento.php" class="btn btn-custom-primary col-md-2">Descargar informe</a>
+                            <form action="functions/event/dataDownload.php" class="col-md-2">
+                                <input class="btn btn-custom-primary " value="Descargar informe" type="submit">
+                            </form>
                         <?php } ?>
 
                     </div>
