@@ -35,15 +35,22 @@ $event = $query->fetchAll(PDO::FETCH_OBJ);
             <div class="card">
                 <div class="card-body">
                     <h5 class="card-title">Registrarse al evento: <?php echo $event[0]->name ?></h5>
-                    <form action="registrar_evento_proceso.php" method="POST">
+                    <p class="card-text">
+                        <?php echo $event[0]->description ?>
+                    </p>
 
-                        <label for="exampleInputEmail1" class="form-label">Elegir la semana del evento</label>
-                        <select class="form-select" aria-label="Default select example" name="semana">
-                            <option value="1" selected>Semana 1</option>
-                            <option value="2">Semana 2</option>
-                            <option value="3">Semana 3</option>
-                            <option value="4">Semana 4</option>
-                        </select>
+                    <hr>
+
+                    <form action="registrar_evento_proceso.php" method="POST">
+                        <div class="form-group">
+                            <label for="exampleInputEmail1" class="form-label">Elegir la semana del evento</label>
+                            <select class="form-select" aria-label="Default select example" name="semana">
+                                <option value="1" selected>Semana 1</option>
+                                <option value="2">Semana 2</option>
+                                <option value="3">Semana 3</option>
+                                <option value="4">Semana 4</option>
+                            </select>
+                        </div>
 
                         <!-- Buttons -->
                         <div class="row m-1 justify-content-end">
