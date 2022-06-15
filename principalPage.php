@@ -43,6 +43,15 @@ $events = $query->fetchAll(PDO::FETCH_OBJ);
             </div>
         <?php } ?>
 
+
+
+        <?php if (isset($_GET['message']) && $_GET['message'] == 'successNewEvent') { ?>
+            <div class="alert alert-success alert-dismissible fade show" role="alert">
+                Se ha registrado el evento correctamente.
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+        <?php } ?>
+
         <?php if (isset($_GET['message']) && $_GET['message'] == 'success') { ?>
             <script>
                 window.onload = function alertSuccess() {
@@ -81,7 +90,7 @@ $events = $query->fetchAll(PDO::FETCH_OBJ);
                     <h5 class="card-title col-md-4">Eventos</h5>
                     <?php if (isset($_SESSION['user']) && ($_SESSION['user']['role'] == 'admin')) { ?>
                         <form action="functions/event/nuevoEvento.php" class="col-md-2">
-                            <input type="submit" class="btn btn-custom-primary" value="Registrar nuevo evento"> 
+                            <input type="submit" class="btn btn-custom-primary" value="Registrar nuevo evento">
                         </form>
                     <?php } ?>
 
@@ -107,7 +116,7 @@ $events = $query->fetchAll(PDO::FETCH_OBJ);
                                 <td><?php echo $event->name ?></td>
                                 <td><?php echo $event->month ?></td>
                                 <td>
-                                    <a class="btn btn-custom-primary" href="functions/event/registrar_evento.php?eventId=<?php echo $event->id ?>">Registrarme</a>
+                                    <a class="btn btn-custom-primary" href="functions/event/registrar_evento.php?eventId=<?php echo $event->id ?>">Ver</a>
                                 </td>
                             </tr>
 
