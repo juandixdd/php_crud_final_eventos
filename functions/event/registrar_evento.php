@@ -16,15 +16,10 @@ $query = $bd->query("SELECT * FROM events WHERE id = $eventId");
 $event = $query->fetchAll(PDO::FETCH_OBJ);
 
 $query2 = $bd->query("
-select 
-	e.name as 'nombre',
-	r.semana,
-	count(u.names) as 'cupos'
-from users u
-join usuario_evento r on r.id_user = u.id
-join events e on e.id = r.id_event
-group by semana
-order by e.name
+select ue.semana, e.name as nombre, count( ue.id_user) as cupos from usuario_evento ue 
+inner join events e on e.id = ue.id_event
+group by ue.semana, e.name
+order by e.name asc
 ");
 $cupos = $query2->fetchAll(PDO::FETCH_OBJ);
 ?>
