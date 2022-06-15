@@ -34,21 +34,38 @@ $event = $query->fetchAll(PDO::FETCH_OBJ);
         <div class="col-md-6 p-5">
             <div class="card">
                 <div class="card-body">
-                    <h5 class="card-title">Registrarse al evento: <?php echo $event[0]->name ?></h5>
-                    <p class="card-text">
+                    <h5 class="card-title">Registrarse al evento: <?php echo $event[0]->name ?> del mes de <?php echo $event[0]->month ?></h5>
+                    <p class="card-text p-3">
                         <?php echo $event[0]->description ?>
                     </p>
 
                     <hr>
 
                     <form action="registrar_evento_proceso.php" method="POST">
-                        <div class="form-group">
-                            <label for="exampleInputEmail1" class="form-label">Elegir la semana del evento</label>
+                        <div class="form-group mb-3">
+                            <label for="exampleInputEmail1" class="form-label">Semana del evento</label>
                             <select class="form-select" aria-label="Default select example" name="semana">
                                 <option value="1" selected>Semana 1</option>
                                 <option value="2">Semana 2</option>
                                 <option value="3">Semana 3</option>
                                 <option value="4">Semana 4</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group mb-3">
+                            <label for="exampleInputEmail1" class="form-label">Día del evento</label>
+                            <select class="form-select" aria-label="Default select example" name="dia">
+                                <option value="1" selected>Lunes</option>
+                                <option value="2">Martes</option>
+                                <option value="3">Miércoles</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group mb-3">
+                            <label for="exampleInputEmail1" class="form-label">Hora del evento</label>
+                            <select class="form-select" aria-label="Default select example" name="hora">
+                                <option value="1" selected>8 AM</option>
+                                <option value="2">2 PM</option>
                             </select>
                         </div>
 
