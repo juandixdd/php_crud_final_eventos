@@ -80,7 +80,9 @@ $events = $query->fetchAll(PDO::FETCH_OBJ);
                 <div class="row justify-content-between">
                     <h5 class="card-title col-md-4">Eventos</h5>
                     <?php if (isset($_SESSION['user']) && ($_SESSION['user']['role'] == 'admin')) { ?>
-                        <a href="functions/events/nuevoEvento.php" class="btn btn-custom-primary col-md-2">Agregar evento</a>
+                        <form action="functions/event/nuevoEvento.php" class="col-md-2">
+                            <input type="submit" class="btn btn-custom-primary" value="Registrar nuevo evento"> 
+                        </form>
                     <?php } ?>
 
                 </div>

@@ -2,7 +2,8 @@
 
 <?php
 include_once 'model/conexion.php';
-$query = $bd->prepare("select concat(e.name, ' - Semana ' ,r.semana,' - ', r.dia) as 'event' from users u
+$query = $bd->prepare("
+select concat(e.name, ' - Semana ' ,r.semana,' - ', r.dia) as 'event' from users u
 join usuario_evento r on u.id = r.id_user
 join events e on e.id = r.id_event
 where u.id = ?
