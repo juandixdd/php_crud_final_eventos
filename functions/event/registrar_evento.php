@@ -14,6 +14,9 @@ include_once "../../model/conexion.php";
 $eventId = $_GET['eventId'];
 $query = $bd->query("SELECT * FROM events WHERE id = $eventId");
 $event = $query->fetchAll(PDO::FETCH_OBJ);
+
+$query2 = $bd->query("select e.name, r.semana as 'semana', count(r.semana) as 'cupos'   from events e join usuario_evento r on r.id_event = e.id group by r.semana");
+$cupos = $query2->fetchAll(PDO::FETCH_OBJ);
 ?>
 
 
@@ -31,52 +34,85 @@ $event = $query->fetchAll(PDO::FETCH_OBJ);
 <body style="background-color: #F7F7F7">
 
     <div class="row m-0 vh-100 justify-content-center align-items-center scale-up-center">
-        <div class="col-md-6 p-5">
-            <div class="card">
-                <div class="card-body">
-                    <h5 class="card-title">Registrarse al evento: <?php echo $event[0]->name ?> del mes de <?php echo $event[0]->month ?></h5>
-                    <p class="card-text p-3">
-                        <?php echo $event[0]->description ?>
-                    </p>
+        <div class="col-md-8 p-5">
+            <div class="row">
+                <div class="card col-md-5 m-3">
+                    <div class="card-body">
+                        <h5 class="card-title">Registrarse al evento: <?php echo $event[0]->name ?> del mes de <?php echo $event[0]->month ?></h5>
+                        <p class="card-text p-3">
+                            <?php echo $event[0]->description ?>
+                        </p>
 
-                    <hr>
+                        <hr>
 
-                    <form action="registrar_evento_proceso.php" method="POST">
-                        <div class="form-group mb-3">
-                            <label for="exampleInputEmail1" class="form-label">Semana del evento</label>
-                            <select class="form-select" aria-label="Default select example" name="semana">
-                                <option value="1" selected>Semana 1</option>
-                                <option value="2">Semana 2</option>
-                                <option value="3">Semana 3</option>
-                                <option value="4">Semana 4</option>
-                            </select>
-                        </div>
+                        <form action="registrar_evento_proceso.php" method="POST">
+                            <div class="form-group mb-3">
+                                <label for="exampleInputEmail1" class="form-label">Semana del evento</label>
+                                <select class="form-select" aria-label="Default select example" name="semana">
+                                    <option value="1" selected>Semana 1</option>
+                                    <option value="2">Semana 2</option>
+                                    <option value="3">Semana 3</option>
+                                    <option value="4">Semana 4</option>
+                                </select>
+                            </div>
 
-                        <div class="form-group mb-3">
-                            <label for="exampleInputEmail1" class="form-label">Día del evento</label>
-                            <select class="form-select" aria-label="Default select example" name="dia">
-                                <option value="Lunes" selected>Lunes</option>
-                                <option value="Martes">Martes</option>
-                                <option value="Miércoles">Miércoles</option>
-                            </select>
-                        </div>
+                            <div class="form-group mb-3">
+                                <label for="exampleInputEmail1" class="form-label">Día del evento</label>
+                                <select class="form-select" aria-label="Default select example" name="dia">
+                                    <option value="Lunes" selected>Lunes</option>
+                                    <option value="Martes">Martes</option>
+                                    <option value="Miércoles">Miércoles</option>
+                                </select>
+                            </div>
 
-                        <div class="form-group mb-3">
-                            <label for="exampleInputEmail1" class="form-label">Hora del evento</label>
-                            <select class="form-select" aria-label="Default select example" name="hora">
-                                <option value="1" selected>8 AM</option>
-                                <option value="2">2 PM</option>
-                            </select>
-                        </div>
+                            <div class="form-group mb-3">
+                                <label for="exampleInputEmail1" class="form-label">Hora del evento</label>
+                                <select class="form-select" aria-label="Default select example" name="hora">
+                                    <option value="1" selected>8 AM</option>
+                                    <option value="2">2 PM</option>
+                                </select>
+                            </div>
 
-                        <input type="hidden" value="<?php echo $eventId ?>" name="id_event">
+                            <input type="hidden" value="<?php echo $eventId ?>" name="id_event">
 
-                        <!-- Buttons -->
-                        <div class="row m-1 justify-content-end">
-                            <a class="btn btn-outline-dark col-auto m-1" href="../../principalPage.php?message=null">Cancelar</a>
-                            <input type="submit" class="btn btn-custom-primary col-auto m-1" value="Registrarme">
-                        </div>
-                    </form>
+                            <!-- Buttons -->
+                            <div class="row m-1 justify-content-end">
+                                <a class="btn btn-outline-dark col-auto m-1" href="../../principalPage.php?message=null">Cancelar</a>
+                                <input type="submit" class="btn btn-custom-primary col-auto m-1" value="Registrarme">
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+                <!-- Tabla de cupos -->
+                <div class="card col-md-5 m-3">
+                    <div class="card-body">
+                        <h5 class="card-title">Estos son los cupos disponibles por cada evento</h5>
+
+                        <table class="table table-striped">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Nombre</th>
+                                    <th scope="col">Semana</th>
+                                    <th scope="col">Cupos</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+
+                                <?php foreach ($cupos as $cupo) { ?>
+                                    <tr>
+                                        <td><?php echo $cupo->name ?></td>
+                                        <td>Semana <?php echo $cupo->semana ?></td>
+                                        <td><?php echo 100-$cupo->cupos ?></td>
+                                    </tr>
+                                <?php } ?>
+
+                               
+
+                            </tbody>
+                        </table>
+
+                    </div>
                 </div>
             </div>
         </div>

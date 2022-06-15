@@ -6,6 +6,8 @@ include_once 'model/conexion.php';
 $query = $bd->query("SELECT * FROM events");
 $events = $query->fetchAll(PDO::FETCH_OBJ);
 
+/* Se cuenta cada evento */
+
 ?>
 
 <div class="container mt-5 scale-up-center" style="margin-bottom: 100px;">
