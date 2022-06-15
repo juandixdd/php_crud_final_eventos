@@ -27,6 +27,50 @@ $events = $query->fetchAll(PDO::FETCH_OBJ);
             </script>
         <?php } ?>
 
+        <?php if (isset($_GET['message']) && $_GET['message'] == 'error4') { ?>
+            <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                Opps! Ya estás registrado en el evento para esa semana.
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+        <?php } ?>
+
+        <?php if (isset($_GET['message']) && $_GET['message'] == 'error5') { ?>
+            <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                Opps! Ya se terminaron los cupos disponibles.
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+        <?php } ?>
+
+        <?php if (isset($_GET['message']) && $_GET['message'] == 'success') { ?>
+            <script>
+                window.onload = function alertSuccess() {
+                    swal({
+                        title: "Te has registrado",
+                        text: "Puedes seguir viendo los eventos",
+                        icon: "success",
+                        position: "top-end",
+                        showConfirmButton: false,
+                        timer: 1000
+                    });
+                }
+            </script>
+        <?php } ?>
+
+        <?php if (isset($_GET['message']) && $_GET['message'] == 'errorRegistro') { ?>
+            <script>
+                window.onload = function alertSuccess() {
+                    swal({
+                        title: "Opps!",
+                        text: "Algo salió mal, intenta de nuevo",
+                        icon: "success",
+                        position: "top-end",
+                        showConfirmButton: false,
+                        timer: 1000
+                    });
+                }
+            </script>
+        <?php } ?>
+
         <!-- ? Alerts -->
 
         <div class="card">
@@ -68,6 +112,8 @@ $events = $query->fetchAll(PDO::FETCH_OBJ);
         </div>
     </div>
 </div>
+
+
 
 
 <?php include 'template/footer.php'; ?>

@@ -55,9 +55,9 @@ $event = $query->fetchAll(PDO::FETCH_OBJ);
                         <div class="form-group mb-3">
                             <label for="exampleInputEmail1" class="form-label">Día del evento</label>
                             <select class="form-select" aria-label="Default select example" name="dia">
-                                <option value="1" selected>Lunes</option>
-                                <option value="2">Martes</option>
-                                <option value="3">Miércoles</option>
+                                <option value="Lunes" selected>Lunes</option>
+                                <option value="Martes">Martes</option>
+                                <option value="Miércoles">Miércoles</option>
                             </select>
                         </div>
 
@@ -68,6 +68,8 @@ $event = $query->fetchAll(PDO::FETCH_OBJ);
                                 <option value="2">2 PM</option>
                             </select>
                         </div>
+
+                        <input type="hidden" value="<?php echo $eventId ?>" name="id_event">
 
                         <!-- Buttons -->
                         <div class="row m-1 justify-content-end">
