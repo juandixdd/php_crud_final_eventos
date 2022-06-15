@@ -15,7 +15,12 @@ $eventId = $_GET['eventId'];
 $query = $bd->query("SELECT * FROM events WHERE id = $eventId");
 $event = $query->fetchAll(PDO::FETCH_OBJ);
 
-$query2 = $bd->query("select e.name, r.semana as 'semana', count(r.semana) as 'cupos'   from events e join usuario_evento r on r.id_event = e.id group by r.semana");
+$query2 = $bd->query("
+select e.name as 'nombre', r.semana as 'semana', count(r.semana) as 'cupos' from events e
+join usuario_evento r on r.id_event = e.id
+group by e.name 
+having count(r.semana>1)
+");
 $cupos = $query2->fetchAll(PDO::FETCH_OBJ);
 ?>
 
@@ -101,13 +106,13 @@ $cupos = $query2->fetchAll(PDO::FETCH_OBJ);
 
                                 <?php foreach ($cupos as $cupo) { ?>
                                     <tr>
-                                        <td><?php echo $cupo->name ?></td>
+                                        <td><?php echo $cupo->nombre ?></td>
                                         <td>Semana <?php echo $cupo->semana ?></td>
-                                        <td><?php echo 100-$cupo->cupos ?></td>
+                                        <td><?php echo 100 - $cupo->cupos ?></td>
                                     </tr>
                                 <?php } ?>
 
-                               
+
 
                             </tbody>
                         </table>
@@ -122,3 +127,4 @@ $cupos = $query2->fetchAll(PDO::FETCH_OBJ);
 </body>
 
 </html>
+
