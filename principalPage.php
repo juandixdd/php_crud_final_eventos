@@ -125,7 +125,12 @@ $events = $query->fetchAll(PDO::FETCH_OBJ);
                                 <td>
                                     <div class="row">
                                         <a class="btn btn-custom-primary col-auto m-1" href="functions/event/registrar_evento.php?eventId=<?php echo $event->id ?>">Ver</a>
-                                        <a class="btn btn-danger col-auto m-1" data-bs-toggle="modal" data-bs-target="#deleteModal">Eliminar</a>
+
+                                        <?php if (isset($_SESSION['user']) && ($_SESSION['user']['role'] == 'admin')) { ?>
+                                            <div class="col-auto p-1">
+                                                <a class="btn btn-danger col-auto m-1" data-bs-toggle="modal" data-bs-target="#deleteModal">Eliminar</a>
+                                            </div>
+                                        <?php } ?>
                                 </td>
                             </tr>
 
