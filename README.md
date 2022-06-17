@@ -1,5 +1,5 @@
 # Crud final de php - Eventos JuanDi
-El crud final para pla planeación de eventos en php
+El crud final para la planeación de eventos en php
 
 #
 
